@@ -51,7 +51,7 @@ class Nifti1Header(pydantic.BaseModel):
     magic: typing.Literal[b"ni1", b"n+1"]
 
     @classmethod
-    def from_nibabel(cls, header: nb.Nifti1Header) -> typing.Self:
+    def from_nibabel(cls, header: nb.Nifti1Header) -> "Nifti1Header":
         h = header.structarr
         keys: dict[str, typing.Any] = {name: h[name].tolist() for name in h.dtype.names}  # type: ignore
         return cls(**keys)
@@ -64,7 +64,7 @@ class Nifti1Meta(pydantic.BaseModel):
     @classmethod
     def from_nibabel_sidecar(
         cls, img: nb.Nifti1Image, sidecar: dict[str, typing.Any]
-    ) -> typing.Self:
+    ) -> "Nifti1Meta":
         img_header: nb.Nifti1Header = img.header  # type: ignore
 
         return cls(header=Nifti1Header.from_nibabel(img_header), sidecar=sidecar)
