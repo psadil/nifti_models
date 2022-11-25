@@ -245,7 +245,7 @@ class MRIMeta(pydantic.BaseModel):
     Interpolation3D: str | None = None
     BaseResolution: int | None = None
     ShimSetting: list[float] | None = None
-    DiffusionScheme: typing.Literal["Monopolor", "Bipolar"] | None = None
+    DiffusionScheme: typing.Literal["Monopolar", "Bipolar"] | None = None
     DelayTime: fields.SecondTimedelta | None = None
     TxRefAmp: float | None = None
     PhaseResolution: float | None = None
