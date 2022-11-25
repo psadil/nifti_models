@@ -220,7 +220,7 @@ class MRIMeta(pydantic.BaseModel):
     ## https://github.com/rordenlab/dcm2niix/tree/master/BIDS#manufacturer-general-electric
     PulseSequenceName: str | None = None
     InternalPulseSequenceName: str | None = None
-    PhaseEncodingPolarityGE: typing.Literal["Flipped", "Unflipped"]
+    PhaseEncodingPolarityGE: typing.Literal["Flipped", "Unflipped"] | None = None
     NumberOfPointsPerArm: int | None = None
     NumberOfArms: int | None = None
     NumberOfExcitations: int | None = None
