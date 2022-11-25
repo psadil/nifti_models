@@ -5,9 +5,10 @@ description = "pydantic models for nifti images"
 authors = ["Patrick Sadil"]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<4.0"
+python = ">=3.10"
 pydantic = ">=1.10.2"
 nibabel = ">=4.0.2"
+deepdiff = ">=6.2.0"
 
 [tool.poetry.dev-dependencies]
 black = ">=22.10.0"
